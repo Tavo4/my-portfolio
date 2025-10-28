@@ -1,0 +1,124 @@
+<!--
+  Tavolando Superalto - Portafolio (Versión para Netlify)
+  Sube esta carpeta directamente a Netlify o GitHub Pages.
+  Estructura: index.html + /img/
+-->
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tavolando Superalto — Portafolio</title>
+  <meta name="description" content="Portafolio de Tavolando Superalto — collages y proyectos de interiorismo.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#070707;--surface:#0f0f10;--muted:#bdbdbd;--accent:#c68a3f;--max-width:1100px;--gap:18px;
+      font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#fff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--muted);line-height:1.35;-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--max-width);margin:0 auto;padding:36px 20px}
+    header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+    .logo{width:56px;height:56px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;background:linear-gradient(180deg,#222,#111);color:#fff;border:1px solid rgba(255,255,255,0.04)}
+    h1{margin:0;font-size:20px;letter-spacing:0.06em;color:#fff}
+    p.lead{margin:0;color:var(--muted);opacity:0.9}
+    nav{display:flex;gap:18px}
+    a.navlink{color:var(--muted);text-decoration:none;font-weight:600;font-size:13px}
+    a.navlink:hover{color:var(--accent)}
+    .hero{display:grid;align-items:center;grid-template-columns:1fr auto;margin:48px 0}
+    .hero h2{color:#fff;margin:0 0 8px;font-size:34px;font-weight:600}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-decoration:none;font-weight:600}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),rgba(198,138,63,0.9));color:#070707;border:none}
+    .tabs{display:flex;gap:12px;margin:30px 0}
+    .tab{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.03);cursor:pointer;color:var(--muted)}
+    .tab.active{background:rgba(255,255,255,0.03);color:#fff}
+    .gallery{column-width:300px;column-gap:var(--gap)}
+    .card{break-inside:avoid;margin-bottom:var(--gap);position:relative;overflow:hidden;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .card img{width:100%;transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+    .card:hover img{transform:scale(1.03)}
+    .caption{position:absolute;left:12px;bottom:10px;font-size:12px;color:var(--muted);background:rgba(0,0,0,0.35);padding:6px 8px;border-radius:6px}
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.92);z-index:1200;padding:32px}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:95%;max-height:90%;box-shadow:0 10px 60px rgba(0,0,0,0.7)}
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:30px;margin:64px 0}
+    .contact .info,.contact .form{padding:24px;border-radius:10px;background:var(--surface);border:1px solid rgba(255,255,255,0.02)}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:8px}
+    input,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff}
+    textarea{min-height:120px}
+    footer{text-align:center;color:var(--muted);font-size:13px;margin:60px 0 36px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.gallery{column-width:220px}}
+    @media(max-width:520px){.gallery{column-width:160px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex;align-items:center;gap:14px">
+        <div class="logo">TS</div>
+        <div>
+          <h1>Tavolando Superalto</h1>
+          <p class="lead">Collage · Espacio · Diseño</p>
+        </div>
+      </div>
+      <nav>
+        <a class="navlink" href="#about">Acerca</a>
+        <a class="navlink" href="#work">Mi trabajo</a>
+        <a class="navlink" href="#contact">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h2>Collage, espacio y caos en equilibrio.</h2>
+          <p>Portafolio visual de Tavolando Superalto — piezas artísticas y proyectos de interiorismo.</p>
+          <div style="margin-top:18px">
+            <a href="#work" class="btn primary">Ver mi trabajo</a>
+            <a href="#contact" class="btn" style="margin-left:8px">Contacto</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <h3 style="color:#fff;margin-bottom:0">Mi trabajo</h3>
+        <div class="tabs">
+          <button class="tab active" data-filter="all">Todos</button>
+          <button class="tab" data-filter="artistico">Artístico</button>
+          <button class="tab" data-filter="interiorista">Interiorista</button>
+        </div>
+        <div id="gallery" class="gallery">
+          <figure class="card" data-type="artistico"><img src="/img/collage1.jpg" alt="Collage 1"><figcaption class="caption">Collage 2024</figcaption></figure>
+          <figure class="card" data-type="artistico"><img src="/img/collage2.jpg" alt="Collage 2"><figcaption class="caption">Collage 2023</figcaption></figure>
+          <figure class="card" data-type="interiorista"><img src="/img/interior1.jpg" alt="Proyecto interior"><figcaption class="caption">Interior 2024</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:6rem">
+        <h3 style="color:#fff">Contacto</h3>
+        <div class="contact">
+          <div class="info">
+            <p>¿Quieres colaborar o adquirir obra? Escríbeme.</p>
+            <p style="margin-top:18px"><strong>Correo</strong><br><a href="mailto:tuemail@example.com" style="color:var(--muted);text-decoration:none">tuemail@example.com</a></p>
+            <p style="margin-top:12px"><strong>Instagram</strong><br><a href="https://instagram.com/tavolando_superalto" target="_blank" style="color:var(--muted);text-decoration:none">@tavolando_superalto</a></p>
+          </div>
+          <form class="form" action="mailto:tuemail@example.com" method="post" enctype="text/plain">
+            <label for="name">Nombre</label><input id="name" name="name" placeholder="Tu nombre">
+            <label for="email">Correo</label><input id="email" name="email" placeholder="tu@correo.com">
+            <label for="message">Mensaje</label><textarea id="message" name="message"></textarea>
+            <div style="margin-top:14px;text-align:right"><button type="submit" class="btn primary">Enviar</button></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer><small>© Tavolando Superalto — Guadalajara, México</small></footer>
+  </div>
+
+  <script>
+    const tabs=document.querySelectorAll('.tab');const cards=document.querySelectorAll('.card');
+    tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');let f=t.dataset.filter;cards.forEach(c=>c.style.display=(f==='all'||c.dataset.type===f)?'block':'none')}));
+  </script>
+</body>
+</html>

@@ -17,6 +17,38 @@
       --bg:#070707;--surface:#0f0f10;--muted:#bdbdbd;--accent:#c68a3f;--max-width:1100px;--gap:18px;
       font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#fff;
     }
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: #0d0d0d;
+}
+    .card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+    .responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.caption {
+  text-align: center;
+  color: #f0f0f0;
+  font-size: 1rem;
+  padding: 0.8rem;
+  background-color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--muted);line-height:1.35;-webkit-font-smoothing:antialiased}
     .container{max-width:var(--max-width);margin:0 auto;padding:36px 20px}
@@ -81,19 +113,22 @@
         </div>
       </section>
 
-      <section id="work">
-        <h3 style="color:#fff;margin-bottom:0">Mi trabajo</h3>
-        <div class="tabs">
-          <button class="tab active" data-filter="all">Collage</button>
-          <button class="tab" data-filter="artistico">Comisiones</button>
-          <button class="tab" data-filter="interiorista">Interiorismo</button>
-        </div>
-        <div id="gallery" class="gallery">
-          <figure class="card" data-type="artistico"><img src="img/11a.png" alt="11"><figcaption class="caption">Collage 2024</figcaption></figure>
-          <figure class="card" data-type="artistico"><img src="img/22.png" alt="22"><figcaption class="caption">Collage 2023</figcaption></figure>
-          <figure class="card" data-type="interiorista"><img src="img/33.png" alt="33"><figcaption class="caption">Interior 2024</figcaption></figure>
-        </div>
-      </section>
+      <section id="gallery" class="gallery">
+  <figure class="card" data-type="artistico">
+    <img src="img/11a.png" alt="Collage 2024" class="responsive">
+    <figcaption class="caption">Collage 2024</figcaption>
+  </figure>
+
+  <figure class="card" data-type="artistico">
+    <img src="img/22.png" alt="Collage 2023" class="responsive">
+    <figcaption class="caption">Collage 2023</figcaption>
+  </figure>
+
+  <figure class="card" data-type="interiorista">
+    <img src="img/33.png" alt="Interior 2024" class="responsive">
+    <figcaption class="caption">Interior 2024</figcaption>
+  </figure>
+</section>
 
       <section id="contact" style="margin-top:6rem">
         <h3 style="color:#fff">Contacto</h3>
@@ -122,6 +157,7 @@
   </script>
 </body>
 </html>
+
 
 
 
